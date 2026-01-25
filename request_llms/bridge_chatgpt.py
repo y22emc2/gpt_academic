@@ -437,9 +437,9 @@ def handle_error(inputs, llm_kwargs, chatbot, history, chunk_decoded, error_msg)
     elif "API key has been deactivated" in error_msg:
         chatbot[-1] = (chatbot[-1][0], "[Local Message] API key has been deactivated. OpenAI以账户失效为由, 拒绝服务." + openai_website)
     elif "bad forward key" in error_msg:
-        chatbot[-1] = (chatbot[-1][0], "[Local Message] Bad forward key. API2D账户额度不足.")
+        chatbot[-1] = (chatbot[-1][0], "[Local Message] Bad forward key.")
     elif "Not enough point" in error_msg:
-        chatbot[-1] = (chatbot[-1][0], "[Local Message] Not enough point. API2D账户点数不足.")
+        chatbot[-1] = (chatbot[-1][0], "[Local Message] Not enough point.")
     else:
         from toolbox import regular_txt_to_markdown
         tb_str = '```\n' + trimmed_format_exc() + '```'
